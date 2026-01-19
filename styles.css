@@ -6,7 +6,6 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #0b1220;
-  color: #eaf0ff;
   line-height: 1.6;
   padding: 20px;
 }
@@ -42,11 +41,13 @@ h1 {
   min-width: 140px;
   text-align: center;
   padding: 15px;
-  background: linear-gradient(
-    135deg,
-    rgba(80, 155, 255, 0.18),
-    rgba(255, 255, 255, 0) 55%
-  );
+  background:
+    radial-gradient(
+      1200px 600px at 50% 15%,
+      rgba(80, 155, 255, 0.18),
+      rgba(255, 255, 255, 0) 55%
+    ),
+    rgba(255, 255, 255, 0.03);
   border-radius: 10px;
   color: white;
 }
@@ -101,8 +102,8 @@ h1 {
   position: absolute;
   bottom: 40px;
   left: 50%;
-  transform-origin: center center;
-  width: 400px;
+  transform: translate(-50%, -50%);
+  width: 600px;
   height: 20px;
   background: linear-gradient(to right, #34495e 0 50%, #d2a679 50% 100%);
   border-radius: 10px;
@@ -155,13 +156,17 @@ button {
   margin-top: 20px;
   background:
     radial-gradient(
-      1000px 520px at 50% 10%,
-      rgba(80, 155, 255, 0.2),
-      rgba(255, 255, 255, 0) 60%
+      1200px 600px at 50% 15%,
+      rgba(80, 155, 255, 0.18),
+      rgba(255, 255, 255, 0) 55%
     ),
-    rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.28);
+    rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .seesaw-activity-log-container h2 {
