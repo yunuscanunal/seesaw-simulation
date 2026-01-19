@@ -3,7 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Seesaw Simulation Page</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <h1>Seesaw Simulation</h1>
+      <div class="seesaw-info-container">
+        <div class="seesaw-stats">
+          <div class="stat-box">
+            <div class="stat-label">Left Side</div>
+            <div class="stat-value" id="leftWeight">0 kg</div>
+            <div class="stat-label">Left Torque</div>
+            <div class="stat-value" id="leftTorque">0 Nm</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Next Weight</div>
+            <div class="stat-value" id="nextWeight">0 kg</div>
+            <div class="stat-label">Objects</div>
+            <div class="stat-value" id="objectCount">0</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Seesaw Angle</div>
+            <div class="stat-value" id="seesawAngle">0°</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-label">Right Side</div>
+            <div class="stat-value" id="rightWeight">0 kg</div>
+            <div class="stat-label">Right Torque</div>
+            <div class="stat-value" id="rightTorque">0 Nm</div>
+          </div>
+        </div>
+      </div>
+      <div class="seesaw-playground-container">
+        <div class="seesaw-playground" id="seesawPlayground">
+          <!-- Seesaw simulation will be rendered here -->
+          <div class="pivot">here pivot</div>
+
+          <div class="plank" id="plank">here plank</div>
+        </div>
+        <div class="instructions">
+          <h2>Instructions</h2>
+          <ul>
+            Click anywhere on the seesaw plank to drop objects with random
+            weights.
+          </ul>
+        </div>
+        <div class="controls">
+          <button id="resetObjectButton">Reset Object</button>
+        </div>
+      </div>
+        <div class="seesaw-activity-log-container">
+            <h2>Activity Log</h2>
+            <ul class="activity-log-list" id="activityLogList">
+            <!-- Activity log entries will appear here -->
+            </ul>
+    </div>
+    <script src="app.js" defer></script>
+  </body>
 </html>
