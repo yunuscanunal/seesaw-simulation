@@ -9,7 +9,7 @@ const leftWeight = document.getElementById("leftWeight");
 const leftTorque = document.getElementById("leftTorque");
 const rightWeight = document.getElementById("rightWeight");
 const rightTorque = document.getElementById("rightTorque");
-const nextWeight = document.getElementById("nextWeight");
+
 const tiltAngle = document.getElementById("seesawAngle");
 const activityLogList = document.getElementById("activityLogList");
 const objectCount = document.getElementById("objectCount");
@@ -17,6 +17,7 @@ const objectCount = document.getElementById("objectCount");
 let objects = [];
 let currentAngle = 0;
 let nextWeightValue = getRandomWeightedObject();
+let previewElement = null;
 
 function getRandomWeightedObject() {
   return Math.floor(Math.random() * 10) + 1;
@@ -59,7 +60,6 @@ function loadState() {
       console.error("Failed to load state:", e);
     }
   }
-  nextWeight.textContent = `${nextWeightValue} kg`;
 }
 
 function saveState() {
@@ -105,7 +105,7 @@ plank.addEventListener("click", (event) => {
   );
 
   nextWeightValue = getRandomWeightedObject();
-  nextWeight.textContent = `${nextWeightValue} kg`;
+  updatePreviewColor();
 });
 
 function createObject(object, withDropAnimation = false) {
@@ -195,7 +195,57 @@ function clearActivityLog() {
   activityLogList.innerHTML = "";
 }
 
+// Preview element functions
+function createPreviewElement() {
+  previewElement = document.createElement("div");
+  previewElement.className = "object preview";
+  previewElement.style.backgroundColor = getObjectColor(nextWeightValue);
+  previewElement.textContent = nextWeightValue;
+  previewElement.style.display = "none";
+  plank.appendChild(previewElement);
+}
+
+function updatePreviewColor() {
+  if (previewElement) {
+    previewElement.style.backgroundColor = getObjectColor(nextWeightValue);
+    previewElement.textContent = nextWeightValue;
+  }
+}
+
+function getPlankPosition(event) {
+  const rect = plank.getBoundingClientRect();
+  const rectCenterX = rect.left + rect.width / 2;
+  const rectCenterY = rect.top + rect.height / 2;
+  const mouseXFromCenter = event.clientX - rectCenterX;
+  const mouseYFromCenter = event.clientY - rectCenterY;
+
+  // Apply inverse rotation to get position along the plank axis
+  const angleRad = -currentAngle * (Math.PI / 180);
+  const plankX =
+    mouseXFromCenter * Math.cos(angleRad) -
+    mouseYFromCenter * Math.sin(angleRad);
+
+  // Clamp to plank bounds
+  return Math.max(-plankCenter, Math.min(plankCenter, plankX));
+}
+
+// Mouse event handlers for preview
+plank.addEventListener("mousemove", (event) => {
+  if (!previewElement) return;
+
+  const position = getPlankPosition(event);
+  previewElement.style.left = plankCenter + position + "px";
+  previewElement.style.display = "flex";
+});
+
+plank.addEventListener("mouseleave", () => {
+  if (previewElement) {
+    previewElement.style.display = "none";
+  }
+});
+
 clearActivityLog();
 addActivityLog("Simulation started");
 
 loadState();
+createPreviewElement();
