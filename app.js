@@ -146,7 +146,6 @@ function calculationTorque() {
   leftTorque.textContent = `${leftTotalTorque.toFixed(1)} Nm`;
   rightWeight.textContent = `${rightTotalWeight} kg`;
   rightTorque.textContent = `${rightTotalTorque.toFixed(1)} Nm`;
-  tiltAngle.textContent = `${currentAngle.toFixed(1)}°`;
 
   return {
     leftTotalTorque,
@@ -175,7 +174,7 @@ function updateSeesaw() {
 
   leftWeight.textContent = `${leftTotalWeight} kg`;
   rightWeight.textContent = `${rightTotalWeight} kg`;
-  tiltAngle.textContent = `${currentAngle.toFixed(1)}°`;
+  tiltAngle.textContent = `${(-currentAngle).toFixed(1)}°`;
 }
 
 function resetSeesaw() {
@@ -190,6 +189,10 @@ function resetSeesaw() {
   if (objectCountBefore > 0) {
     addActivityLog(`Reset seesaw - removed ${objectCountBefore} object(s)`);
   }
+}
+
+function clearActivityLog() {
+  activityLogList.innerHTML = "";
 }
 
 clearActivityLog();

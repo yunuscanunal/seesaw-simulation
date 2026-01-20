@@ -170,10 +170,28 @@ button {
   flex-direction: column;
 }
 
-.seesaw-activity-log-container h2 {
+.activity-log-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 12px;
+}
+
+.activity-log-header h2 {
   color: #eaf0ff;
   font-size: 1.2em;
+  margin: 0;
+}
+
+.activity-log-header button {
+  background: rgba(255, 255, 255, 0.1);
+  color: #eaf0ff;
+  padding: 6px 12px;
+  font-size: 0.85em;
+}
+
+.activity-log-header button:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .activity-log-list {
