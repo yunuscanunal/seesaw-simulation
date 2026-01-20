@@ -71,8 +71,21 @@ function saveState() {
 
 plank.addEventListener("click", (event) => {
   const rect = plank.getBoundingClientRect();
-  const clickX = event.clientX - rect.left;
-  const position = clickX - plankCenter;
+
+  // Get click position relative to the center of the bounding box
+  const rectCenterX = rect.left + rect.width / 2;
+  const rectCenterY = rect.top + rect.height / 2;
+  const clickXFromCenter = event.clientX - rectCenterX;
+  const clickYFromCenter = event.clientY - rectCenterY;
+
+  // Apply inverse rotation to get position along the plank axis
+  const angleRad = -currentAngle * (Math.PI / 180);
+  const plankX =
+    clickXFromCenter * Math.cos(angleRad) -
+    clickYFromCenter * Math.sin(angleRad);
+
+  // Clamp to plank bounds
+  const position = Math.max(-plankCenter, Math.min(plankCenter, plankX));
   const weight = nextWeightValue;
   const object = {
     weight: weight,
@@ -98,7 +111,7 @@ plank.addEventListener("click", (event) => {
 function createObject(object, withDropAnimation = false) {
   const objectElement = document.createElement("div");
   objectElement.className = "object" + (withDropAnimation ? " dropping" : "");
-  objectElement.style.left = object.position + "px";
+  objectElement.style.left = plankCenter + object.position + "px";
   objectElement.style.backgroundColor = getObjectColor(object.weight);
   objectElement.textContent = object.weight;
   plank.appendChild(objectElement);
@@ -119,11 +132,13 @@ function calculationTorque() {
   let leftTotalWeight = 0;
   let rightTotalWeight = 0;
   objects.forEach((object) => {
+    // Use absolute value for torque magnitude (torque = weight × distance from pivot)
+    const torque = object.weight * Math.abs(object.position);
     if (object.position < 0) {
-      leftTotalTorque += object.weight * object.position;
+      leftTotalTorque += torque;
       leftTotalWeight += object.weight;
     } else {
-      rightTotalTorque += object.weight * object.position;
+      rightTotalTorque += torque;
       rightTotalWeight += object.weight;
     }
   });
