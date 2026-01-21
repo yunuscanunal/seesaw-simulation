@@ -2,7 +2,7 @@
 
 **Seesaw Simulation**, fizik kurallarına (tork dengesi) dayalı, interaktif bir web tabanlı tahterevalli simülasyonudur. Kullanıcıların tahterevalli üzerine farklı ağırlıklarda nesneler ekleyerek denge değişimlerini gerçek zamanlı gözlemlemelerini sağlar.
 
-🔗 **Canlı Demo:** [seesaw.yunuscanunal.me](http://seesaw.yunuscanunal.me)
+🔗 **Canlı Demo:** <a href="http://seesaw.yunuscanunal.me" target="_blank">seesaw.yunuscanunal.me</a>
 
 ## 🚀 Özellikler
 
@@ -18,6 +18,15 @@
   * Toplam Nesne Sayısı
   * Anlık Eğim Açısı
 
+## 🤖 Yapay Zeka (AI) Desteği
+
+* **Özellik Geliştirme (Claude AI):** Projenin etkileşimli temel özellikleri Claude AI desteği ile geliştirilmiştir. Fare imlecini takip eden **dinamik önizleme (preview)** sistemi ve **"Aktivite Günlüğünü Temizle"** fonksiyonu bu destekle eklenmiştir.
+* **Temel Mantık İyileştirmeleri (Claude AI):** Fizik etkileşimlerinin ve hesaplamaların doğrulanmasında Claude AI aktif rol oynamıştır:
+    * Eğimli kalas üzerindeki tıklama koordinatlarının (click handling) daha hassas hesaplanması sağlanarak nesne yerleşimi düzeltildi.
+    * Eğim açısının görsel sunumundaki hatalar giderildi.
+    * Kullanıcı deneyimini iyileştirmek adına gereksiz UI elementleri (sabit "sonraki ağırlık" göstergesi vb.) kaldırılarak arayüz sadeleştirildi.
+* **Dokümantasyon:** Bu README dosyasının yapısı ve içeriği, projenin net ve kapsamlı bir şekilde anlatılması amacıyla yapay zeka araçlarının desteğiyle oluşturulmuştur.
+
 ## 🛠️ Teknolojiler
 
 Proje, herhangi bir dış kütüphane veya framework kullanılmadan saf (vanilla) web teknolojileri ile geliştirilmiştir:
@@ -25,6 +34,7 @@ Proje, herhangi bir dış kütüphane veya framework kullanılmadan saf (vanilla
 * **HTML5:** Semantik yapı.
 * **CSS3:** Flexbox, CSS Grid, `transform` rotasyonları ve görsel efektler.
 * **JavaScript (ES6+):** Fizik motoru, DOM manipülasyonu ve durum yönetimi.
+
 
 ## 🧮 Nasıl Çalışır? (Fizik Mantığı)
 
@@ -67,4 +77,5 @@ Bu proje statik bir web sitesidir, çalıştırmak için Node.js vb. bir backend
 
 ---
 *Geliştirici: [Yunuscan Ünal](https://github.com/yunuscanunal)*
+
 
