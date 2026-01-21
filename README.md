@@ -19,7 +19,7 @@
     * Left/Right Side Weight (kg) and Torque (Nm)
     * Total Object Count
     * Current Tilt Angle
-    * 
+      
 ## 🤖 AI Assistance
 
 * **Feature Implementation (Claude AI):** Major interactive features were implemented with the assistance of Claude AI. This includes the **dynamic preview element** that follows the mouse cursor and the logic for the **"Clear Activity Log"** functionality.
