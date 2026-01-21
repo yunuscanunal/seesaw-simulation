@@ -49,14 +49,14 @@ $$\tau = F \times d$$
 Sistem her nesne eklendiğinde sol ve sağ taraftaki toplam torku hesaplar. Net tork farkına göre tahterevallinin açısı (`rotate`) güncellenir. Açı, maksimum ±30 derece ile sınırlandırılmıştır.
 
 ## 📂 Proje Yapısı
-
+```
 seesaw-simulation/
 ├── index.html      # Ana sayfa yapısı ve paneller
 ├── styles.css      # Arayüz tasarımı ve animasyonlar
 ├── app.js          # Fizik hesaplamaları ve oyun mantığı
 ├── README.md       # Proje dokümantasyonu
 └── CNAME           # Custom domain ayarı
-
+```
 ## 📦 Kurulum ve Çalıştırma
 
 Bu proje statik bir web sitesidir, çalıştırmak için Node.js vb. bir backend kurulumuna gerek yoktur.
@@ -77,5 +77,6 @@ Bu proje statik bir web sitesidir, çalıştırmak için Node.js vb. bir backend
 
 ---
 *Geliştirici: [Yunuscan Ünal](https://github.com/yunuscanunal)*
+
 
 
