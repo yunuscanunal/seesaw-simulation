@@ -24,9 +24,18 @@ function getRandomWeightedObject() {
 }
 
 function getObjectColor(weight) {
-  if (weight <= 3) return "#4caf50";
-  if (weight <= 6) return "#ff9800";
-  return "#e53935";
+  // Smooth color transition from green (1) to red (10) using HSL
+  // Hue: 120 (green) -> 60 (yellow) -> 30 (orange) -> 0 (red)
+  const minWeight = 1;
+  const maxWeight = 10;
+  const t = (weight - minWeight) / (maxWeight - minWeight); // 0 to 1
+
+  // Interpolate hue from 120 (green) to 0 (red)
+  const hue = 120 * (1 - t);
+  const saturation = 70 + t * 15; // 70% to 85%
+  const lightness = 50 - t * 5; // 50% to 45% (slightly darker for red)
+
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 }
 
 function addActivityLog(message) {
