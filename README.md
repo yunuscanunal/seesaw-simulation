@@ -50,7 +50,7 @@ $$\tau = F \times d$$
 The system calculates the total torque for the left and right sides whenever an object is added. The seesaw's angle (`rotate`) is updated based on the net torque difference. The angle is clamped to a maximum of ±30 degrees.
 
 ## 📂 Project Structure
-
+```
 seesaw-simulation/
 ├── index.html      # Main page structure and panels
 ├── styles.css      # UI design and animations
@@ -58,7 +58,7 @@ seesaw-simulation/
 ├── README.md       # Project documentation (English)
 ├── README.tr.md    # Project documentation (Turkish)
 └── CNAME           # Custom domain configuration
-
+```
 ## 📦 Setup and Run
 
 Since this is a static website, no backend setup (like Node.js) is required.
