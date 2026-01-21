@@ -66,4 +66,5 @@ Bu proje statik bir web sitesidir, çalıştırmak için Node.js vb. bir backend
 5.  Pull Request açın.
 
 ---
-*Geliştirici: [Yunus Can Ünal](https://github.com/yunuscanunal)*
+*Geliştirici: [Yunuscan Ünal](https://github.com/yunuscanunal)*
+
