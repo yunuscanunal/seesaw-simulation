@@ -54,9 +54,11 @@ seesaw-simulation/
 ├── index.html      # Ana sayfa yapısı ve paneller
 ├── styles.css      # Arayüz tasarımı ve animasyonlar
 ├── app.js          # Fizik hesaplamaları ve oyun mantığı
-├── README.md       # Proje dokümantasyonu
+├── README.md       # Proje dokümantasyonu 
+├── README.tr.md    # Proje dokümantasyonu (Türkçe)
 └── CNAME           # Custom domain ayarı
 ```
+
 ## 📦 Kurulum ve Çalıştırma
 
 Bu proje statik bir web sitesidir, çalıştırmak için Node.js vb. bir backend kurulumuna gerek yoktur.
@@ -77,6 +79,7 @@ Bu proje statik bir web sitesidir, çalıştırmak için Node.js vb. bir backend
 
 ---
 *Geliştirici: [Yunuscan Ünal](https://github.com/yunuscanunal)*
+
 
 
 
