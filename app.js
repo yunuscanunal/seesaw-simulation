@@ -127,7 +127,7 @@ function createObject(object, withDropAnimation = false) {
 }
 
 function renderObjects() {
-  const existing = plank.querySelectorAll(".object");
+  const existing = plank.querySelectorAll(".object:not(.preview)");
   existing.forEach((element) => element.remove());
 
   objects.forEach((object) => {
