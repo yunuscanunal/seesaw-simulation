@@ -4,7 +4,7 @@
 
 **Seesaw Simulation** is an interactive, web-based physics simulation based on torque balance. It allows users to observe real-time equilibrium changes by adding objects with varying weights to a seesaw.
 
-🔗 **Live Demo:** [seesaw.yunuscanunal.me](http://seesaw.yunuscanunal.me)
+🔗 **Live Demo:** <a href="http://seesaw.yunuscanunal.me" target="_blank">seesaw.yunuscanunal.me</a>
 
 ## 🚀 Features
 
@@ -19,6 +19,15 @@
     * Left/Right Side Weight (kg) and Torque (Nm)
     * Total Object Count
     * Current Tilt Angle
+    * 
+## 🤖 AI Assistance
+
+* **Feature Implementation (Claude AI):** Major interactive features were implemented with the assistance of Claude AI. This includes the **dynamic preview element** that follows the mouse cursor and the logic for the **"Clear Activity Log"** functionality.
+* **Core Logic Refinement (Claude AI):** Claude AI played a key role in debugging and refining the physics interactions, specifically:
+    * Improving the click coordinate calculation for accurate object placement on the tilted plank.
+    * Fixing the visual display of the tilt angle.
+    * Refactoring the UI by removing redundant elements (e.g., static "next weight" display) in favor of a cleaner UX.
+* **Documentation:** The structure and content of this README file were generated and refined with the assistance of AI tools to ensure clarity and comprehensive coverage of the project details.
 
 ## 🛠️ Technologies
 
